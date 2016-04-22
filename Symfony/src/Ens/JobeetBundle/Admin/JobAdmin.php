@@ -77,6 +77,8 @@ class JobAdmin extends  Admin {
         ;
     }
 
+
+    // Phong TQ sửa tại đây !
     protected function configureShowField(ShowMapper $showMapper)
     {
         $showMapper
@@ -96,6 +98,8 @@ class JobAdmin extends  Admin {
             ->add('expires_at')
         ;
     }
+    // đây là các chức năng mở rộng , người lập trình có thể tùy biến bên trong admin bundle
+    // 2 chức năng mới là xóa tất cả những công việc mà trên 60 ngày không gia hạn
     public function getBatchActions()
     {
         // retrieve the default (currently only the delete action) actions
