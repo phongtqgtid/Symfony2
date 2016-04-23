@@ -59,7 +59,11 @@
         {% endfor %}
 
 
-        {#{% if app.session.hasFlash('notice') %}#}
+        {#
+        - Từ symfony2.1 trở đi , không dùng app.session.hasFlash mà
+        thay bằng for như trên
+
+        {% if app.session.hasFlash('notice') %}#}
             {#<div class="flash_notice">#}
                 {#{{ app.session.flash('notice') }}#}
             {#</div>#}

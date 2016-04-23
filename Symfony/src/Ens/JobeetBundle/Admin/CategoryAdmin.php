@@ -22,7 +22,7 @@ class CategoryAdmin extends  Admin {
         '_sort_by' => 'name'
     );
 
-    // những trường hiển thị lên gridview 
+    // những trường hiển thị lên gridview
 
     protected function configureFormFields(FormMapper $formMapper)
     {

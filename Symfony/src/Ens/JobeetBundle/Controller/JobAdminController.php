@@ -54,6 +54,8 @@ class JobAdminController extends  Controller {
         $nb = $em->getRepository('EnsJobeetBundle:Job')->cleanUp(60);
 
         if ($nb) {
+
+            // từ symfony2.1 trở đi sẽ không dùng get('session')->setFlash nữa mà dùng get('session')->getFlashBag()->add();
             $this->get('session')->getFlashBag()->add('sonata_flash_success',  sprintf('%d never activated jobs have been deleted successfully.', $nb));
 
            // $this->get('session')->setFlash('sonata_flash_success',  sprintf('%d never activated jobs have been deleted successfully.', $nb));
