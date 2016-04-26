@@ -95,6 +95,14 @@ class JobRepository extends EntityRepository
         $qb = $query->getQuery();
         return $qb->getSingleResult();
     }
+    public function findMaThe($mathe)
+    {
+        $query = $this->createQueryBuilder('j')
+                       ->where('j.mathe = :mathe')
+                        ->setParameter('mathe',$mathe);
+        $qb= $query->getQuery();
+        return $qb->getSingleResult();
+    }
 
 
 

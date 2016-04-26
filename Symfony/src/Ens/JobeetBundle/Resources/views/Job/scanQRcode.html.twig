@@ -1,0 +1,26 @@
+<form action="{{ path('ens_job_search') }}" method="post" name="formscan">
+    <table>
+        <tr>
+            <td>
+                <input type="text" name="txtMa" id="txma" />
+                <input type="submit" id="submit" name="btn1" value="SEARCH"/>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<script>
+    $('#formscan').submit(function(){
+
+        var mathe = $('#txtMa').val();
+        $.ajax({
+
+            url:"{{ path('ens_job_search') }}",
+            type:"POST",
+            dataType:"text",
+            data:{mathe : mathe}
+        })
+
+    })
+
+</script>

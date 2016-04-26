@@ -187,6 +187,8 @@ class JobController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
+            echo "Thêm mới thành công !";
+
             return $this->redirect($this->generateUrl('ens_job_edit', array('token' => $token)));
         }
         return $this->render('EnsJobeetBundle:Job:edit.html.twig', array(
@@ -219,6 +221,13 @@ class JobController extends Controller
         }
 
         return $this->redirect($this->generateUrl('ens_job'));
+    }
+
+    public function searchAction($mathe)
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+        $entity = $em->getRepository('EnsJobeetBundle:Job')->findMaThe($mathe);
+        return $this->render('EnsJobeetBundle:Job:index.html.twig',array('entity'=>$entity));
     }
 
     /**

@@ -30,3 +30,10 @@ ens_job_delete:
     path:     /{token}/delete
     defaults: { _controller: "EnsJobeetBundle:Job:delete" }
     requirements: { _method: post|delete }
+
+ens_job_search:
+    path:     /{mathe}/search
+    defaults: { _controller: "EnsJobeetBundle:Job:search" }
+    requirements: { _method: post|put }
+
+

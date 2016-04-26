@@ -13,6 +13,7 @@
                     </div>
                     <h1>{{ category.name }}</h1>
                 </div>
+                {% include 'EnsJobeetBundle:Job:scanQRcode.html.twig' %}
                {% include 'EnsJobeetBundle:Job:list.html.twig' with { 'jobs':category.activejobs } %}
                 {% if category.morejobs %}
                     <div class=" more_jobs">

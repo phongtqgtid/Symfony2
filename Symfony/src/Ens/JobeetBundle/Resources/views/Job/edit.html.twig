@@ -20,6 +20,22 @@
     <script src="{{asset('bundles/ensjobeet/js/jquery-2.2.3.min.js')}}"></script>
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 
+    <script language="JavaScript">
+        $('#formupdate').submit(function(){
+
+            $.ajax({
+                url : {{ path('ens_job_update') }},
+                type :"POST",
+                data:{},
+                dataType:"text",
+                success:function(result){
+                    alert(result)
+                }
+            })
+
+        })
+    </script>
+
 {% endblock %}
  
 {% block content %}
@@ -117,20 +133,7 @@
 
         {{ form_rest(edit_form) }}
     </form>
-    <script language="JavaScript">
-
-        $('#formupdate').submit(function(){
-            $.ajax({
-                url:"{{ path('ens_jobs_update',{'token': entity.token})}}",
-                type:"post",
-                dataType:"text",
-                data:{},
-                success:function(result){
-                    alert(result);
-                }
-            });
-        });
-    </script>
+    <>
 
     <ul class="record_actions">
     <li>
@@ -150,11 +153,11 @@
            $.ajax({
               url:"{{ path('ens_job_delete',{'token':entity.token}) }}",
               type:"post",
+              data:{},
               dataType:"text",
-               data:{},
-               success:function(result){
-                   alert(result);
-               }
+              success:function(result){
+                  alert(result);
+              }
            });
        }) ;
     </script>
